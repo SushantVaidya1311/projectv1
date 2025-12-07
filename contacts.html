@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contacts — Blogspace</title>
+    <link rel="icon" href="blog.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --font-main: 'Poppins', sans-serif;
+            --font-heading: 'Merriweather', serif;
+            --color-bg: #f9fafb;
+            --color-card: #fff;
+            --color-primary: #0077ff;
+            --color-accent: #0057b7;
+            --muted: #666;
+            --radius: 12px;
+            --shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        *{box-sizing:border-box;margin:0;padding:0}
+        html,body{height:100%}
+        body{
+            font-family:var(--font-main);
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background: linear-gradient(180deg, rgb(38, 92, 154), var(--color-bg));
+            padding:2rem;
+            color:#222;
+        }
+        .card{
+            width:100%;
+            max-width:760px;
+            background:var(--color-card);
+            border-radius:var(--radius);
+            padding:2rem;
+            box-shadow:var(--shadow);
+        }
+        header{display:flex;align-items:center;gap:1rem;margin-bottom:0.75rem}
+        h1{font-family:var(--font-heading);font-size:1.6rem;color:var(--color-accent)}
+        p.lead{color:var(--muted);margin-bottom:1rem}
+
+        .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+        .contact-item{background:linear-gradient(180deg, #fbfbff, #fff);padding:1rem;border-radius:10px;border:1px solid #eee}
+        .contact-item .label{display:block;color:var(--muted);font-size:0.9rem;margin-bottom:0.35rem}
+        .contact-item .value{font-weight:600;color:#111}
+        .contact-item a{color:var(--color-primary);text-decoration:none}
+
+        .socials{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1rem}
+        .social{display:inline-block;padding:0.5rem 0.9rem;border-radius:8px;background:var(--color-accent);color:#fff;text-decoration:none;font-weight:600}
+
+        .back{margin-top:1.25rem}
+        .back-link{display:inline-block;background:var(--color-primary);color:#fff;padding:0.6rem 1rem;border-radius:10px;text-decoration:none}
+
+        @media (max-width:600px){
+            .contact-grid{grid-template-columns:1fr}
+            .socials{justify-content:flex-start}
+        }
+        @media (prefers-color-scheme:dark){:root{--color-bg:#0b1220;--color-card:#0f1720;color:#e6eef8}}
+    </style>
+</head>
+<body>
+    <div class="card">
+        <header>
+            <h1>Contacts</h1>
+        </header>
+        <p class="lead">Use the details below to reach me — quick links to call or follow on social media.</p>
+
+        <div class="contact-grid">
+            <div class="contact-item">
+                <span class="label">Phone</span>
+                <div class="value"><a href="tel:+91 75500 08154">+91 75500 08154</a></div>
+            </div>
+
+            <div class="contact-item">
+                <span class="label">Email</span>
+                <div class="value"><a href="sushantvaidya1311@gmail.com">sushantvaidya1311@gmail.com</a></div>
+            </div>
+        </div>
+
+        <h3 style="margin-top:1.25rem;font-family:var(--font-heading);color:var(--color-accent)">Follow Me</h3>
+        <div class="socials">
+            <a class="social" href="https://www.instagram.com/suushhiiii/" target="_blank" rel="noopener">Instagram</a>
+            <a class="social" href="https://www.linkedin.com/in/sushant-r-vaidya-278359335/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+
+        <p class="back"><a class="back-link" href="home(landing page).html">Back to Home</a></p>
+    </div>
+</body>
+</html>

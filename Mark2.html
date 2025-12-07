@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>My WebPage</title>
+        <link rel="icon" href="https://www.freeiconspng.com/thumbs/youtube-logo-png/hd-youtube-logo-png-transparent-background-20.png">
+        <link rel="stylesheet" href="mark1.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+<body>
+    <center>
+</script>
+    <h1 style="color:white"><center>Login or Sign-Up&#169;</center></h1><br><br>
+    <div class="wrapper">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Enter Email"  class="center-placeholder"required> 
+                <p id="result"></p>
+                  
+            </div><br>
+            <div class="input-box">
+                <input type="password" placeholder="password" class="center-placeholder" required>
+                
+            </div>
+                <div class="remember-forgot"><br>
+                    <label><input type="checkbox">Remember</label><br>
+                    <a href="m2Edit.html">Forgot Pass?</a>
+                </div><br>
+                    <button onclick="validateLogin()"class="btn">LOGIN</button>
+                    
+                    <div class="register-link">
+                        <p>Dont have an account? <a href="m3Edit.html">Register</a></p>                    
+                    </div>            
+        <!-- </form> -->
+    </div>
+</center>
+</body>
+<script>
+                function validateLogin() {
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+
+      
+      let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (email === "" || password === "") {
+        alert("Please fill in all fields!");
+        return false;
+      }
+      else if (!emailPattern.test(email)) {
+        alert("Invalid email format!");
+        return false;
+      }
+      else {
+        alert("Login successful!");
+        return true;
+      }
+    }
+</script> 
+</html> 

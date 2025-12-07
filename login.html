@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+   <meta name="viewport" content=width=device-width, initial-scale=1.0 >
+   <link rel="icon" href="blog.png" type="image/x-icon">
+  <title>Blogspace(login)</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    :root{
+      --font-main: 'Poppins', sans-serif;
+      --font-heading: 'Merriweather', serif;
+      --color-bg: #f9fafb;
+      --color-card: #fff;
+      --color-primary: #0077ff;
+      --color-accent: #0057b7;
+      --radius: 12px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.08);
+      --transition: all 0.25s ease;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family:var(--font-main);
+      background: linear-gradient(180deg,rgb(38, 92, 154), var(--color-bg));
+      padding:2rem;
+      color:#222;
+    }
+    .card{width:100%;max-width:420px;background:var(--color-card);border-radius:var(--radius);padding:2rem;box-shadow:var(--shadow)}
+    h2{font-family:var(--font-heading);font-size:1.4rem;color:var(--color-accent);margin-bottom:1rem}
+    .input-field{width:100%;padding:12px;margin:8px 0;border-radius:10px;border:1px solid #e6e6e6;font-size:15px}
+    .login-btn{width:100%;padding:12px;border-radius:10px;border:none;background:linear-gradient(90deg,var(--color-primary),#0057b7);color:#fff;font-weight:600;cursor:pointer;transition:var(--transition)}
+    .login-btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,123,255,0.12)}
+    a.forgot{display:block;text-align:center;margin-top:14px;color:#0077ff;text-decoration:none}
+    @media (prefers-color-scheme:dark){:root{--color-bg:#121212;--color-card:#1e1e1e;color:#eee}.input-field{background:transparent;border:1px solid #333;color:#eee}}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Login</h2>
+    <form onsubmit="return Login()">
+      <input type="text" id="email" class="input-field" placeholder="Enter Email">
+      <input type="password" id="password" class="input-field" placeholder="Enter Password">
+      <button type="submit" class="login-btn">Login</button>
+      <a class="forgot" href="ForgotPass.html">Forgot Password?</a>
+    </form>
+  </div>
+</body>
+<script>
+  function getCookie(cookieName) {
+  const cookies = document.cookie;
+  const cookieArray = cookies.split('; ');
+  for (const cookie of cookieArray) {
+    const [name, value] = cookie.split('=');
+    if (name === cookieName) {
+      return decodeURIComponent(value); 
+    }
+  }
+  return null;
+}
+function Login() {
+  let emailfromcookie = getCookie('email'); 
+  let passwordfromcookie = getCookie('password');
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (email === "" || password === "") {
+    alert("⚠️ Please fill in all fields!");
+    return false;
+  }
+  else if (!(email).match(emailPattern)) {
+    alert("❌ Invalid email format! Please try again.");
+    return false;
+  }
+  else if (email !== (emailfromcookie) || password !== (passwordfromcookie)) {
+    Swal.fire("❌ Incorrect Email or Password! Please try again.");
+    return false;
+  }
+  else{
+    Swal.fire({
+    title: "✅ Successfully Signed In",
+    text: "Welcome !",
+    icon: "success"
+  }).then(() => {
+    window.location.href = "home(landing page).html";
+  });
+  return false;
+  }
+}
+</script>
+</html>

@@ -1,0 +1,21 @@
+<!-- heading.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Page Heading</title>
+  <style>
+    body { margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background: #222; color: #fff; }
+    h1 { cursor: pointer; }
+  </style>
+   <script>
+    function showFullContent() {
+      var frame = document.getElementById('myFrame');
+      frame.classList.add('expanded');
+      frame.src = 'fullcontent.html'; // This should be your full content page
+    }
+  </script>
+</head>
+<body>
+  <h1 onclick="window.parent.showFullContent()">Click to view full content</h1>
+</body>
+</html>

@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blogspace — Register</title>
+  <link rel="icon" href="blog.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    :root{
+      --font-main: 'Poppins', sans-serif;
+      --font-heading: 'Merriweather', serif;
+      --color-bg: #f9fafb;
+      --color-card: #fff;
+      --color-primary: #00060e;
+      --color-accent: #b70000;
+      --radius: 12px;
+      --shadow: 0 8px 24px rgba(0,0,0,0.08);
+      --transition: all 0.25s ease;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{height:100%}
+    body{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family:var(--font-main);
+      background: linear-gradient(180deg, rgb(122, 0, 0), var(--color-bg));
+      padding:2rem;
+      color:#222;
+    }
+    .card{
+      width:100%;
+      max-width:420px;
+      background:var(--color-card);
+      border-radius:var(--radius);
+      padding:2rem;
+      box-shadow:var(--shadow);
+    }
+    h1{font-family:var(--font-heading);font-size:1.6rem;color:var(--color-accent);margin-bottom:1rem}
+    .input-field{width:100%;padding:12px;margin:10px 0;border-radius:10px;border:1px solid #e6e6e6;font-size:15px}
+    .input-btn{width:100%;padding:12px;border-radius:10px;border:none;background:linear-gradient(90deg,var(--color-primary),#880202);color:#fff;font-weight:600;cursor:pointer;transition:var(--transition)}
+    .input-btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgb(126, 8, 8)}
+    .muted{color:#666;font-size:0.95rem;text-align:center;margin-top:0.75rem}
+    a.link{color:#fffdd0;text-decoration:none}
+    @media (prefers-color-scheme:dark){
+      :root{--color-bg:#121212;--color-card:#1e1e1e;color:#eee}
+      .input-field{background:transparent;border:1px solid #333;color:#eeeeee}
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <form onsubmit="return Login()">
+      <h1><center>EVENTURE</center></h1>
+      <input type="text" id="firstname" placeholder="First Name" class="input-field" required>
+      <input type="text" id="lastname" placeholder="Last Name" class="input-field" required>
+      <input type="number" id="phnumber" placeholder="Phone Number" class="input-field" required>
+      <input type="text" id="email" placeholder="Enter Email ID" class="input-field" required>
+      <input type="password" id="password" placeholder="Enter Strong Password" class="input-field" required>
+      <button type="submit" class="input-btn">Save</button>
+      <div class="muted"><a class="link" href="login.html">Login With New ID</a></div>
+    </form>
+  </div>
+
+  <script>
+    function setCookie(name, value, days) {
+      const date = new Date();
+      date.setTime(date.getTime() + (days*24*60*60*1000));
+      let expires = "; expires=" + date.toUTCString();
+      document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
+    }
+
+    function Login() {
+      let firstname = document.getElementById("firstname").value;
+      let lastname = document.getElementById("lastname").value;
+      let phnumber = document.getElementById("phnumber").value;
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+
+      let namePattern = /^[A-Za-z]+$/;
+      let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      let PhPattern = /^[0-9]{10}$/;
+
+      if (!(firstname).match(namePattern) || !(lastname).match(namePattern)){
+        Swal.fire("❌ Name must contain only letters");
+        return false;
+      }
+
+      if (!(phnumber).match(PhPattern)){
+        Swal.fire("❌ Number must contain 10 digits");
+        return false;
+      }
+
+      if (firstname=== "" || lastname=== "" || phnumber=== "" || email === "" || password === "" ) {
+        Swal.fire("⚠️ Please fill in all Fields");
+        return false;
+      }
+      else if (!(email).match(emailPattern)) {
+        Swal.fire("❌ Invalid email, Try Again");
+        return false;
+      }
+      else {
+        setCookie("first_name", firstname, 7);
+        setCookie("last_name", lastname, 7);
+        setCookie("phone_number", phnumber, 7);
+        setCookie("email", email, 7);
+        setCookie("password", password, 7);
+
+        Swal.fire({
+          title: "✅ Successfully Signed In",
+          text: "Welcome, " + firstname + "!",
+          icon: "success"
+        }).then(() => {
+          window.location.href = "home(landing page).html";
+        });
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="blog.png" type="image/x-icon">
+  <title>My Modern Blog</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+  :root {
+    --font-main: "Poppins", sans-serif;
+    --font-heading: "Merriweather", serif;
+    --color-bg: #f9fafb;
+    --color-text: #222;
+    --color-primary: #0077ff;
+    --color-secondary: #0057b7;
+    --color-border: #e0e0e0;
+    --color-card-bg: #fff;
+    --radius: 12px;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  /* Layout */
+  .container {
+    max-width: 1200px;              /* wider page container */
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 4fr 1fr; /* bigger main column, smaller sidebar */
+    gap: 3.5rem;                    /* larger gap to push sidebar further right */
+  }
+
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: #fff;
+    padding: 2.5rem;                /* a bit larger */
+    border-radius: var(--radius);
+    margin-bottom: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+
+  .hero h2 {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;              /* bigger hero title */
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 1.15rem;             /* slightly larger hero copy */
+    margin-bottom: 1.5rem;
+  }
+
+  /* Posts */
+  .post {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 2.2rem;                /* bigger padding for "bigified" look */
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    margin-bottom: 2rem;
+    font-size: 1.02rem;             /* slightly larger base font inside posts */
+    line-height: 1.8;
+  }
+
+  .post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+  }
+
+  .post img {
+    width: 100%;
+    height: 320px;                  /* taller featured image */
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+  }
+
+  .post h2 {
+    font-family: var(--font-heading);
+    font-size: 1.9rem;              /* larger post title */
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+  }
+
+  .post h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--color-primary);
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  .post .meta {
+    font-size: 0.98rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+
+  .post p {
+    text-align: justify;
+    margin-bottom: 1rem;
+    color: #c2c2c2;
+    line-height: 1.9;
+  }
+
+  .post a {
+    display: inline-block;
+    background: var(--color-primary);
+    color: #fff;
+    padding: 0.6rem 1.5rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: var(--transition);
+    margin-top: 0.5rem;
+  }
+
+  .post a:hover {
+    background: var(--color-secondary);
+    transform: translateX(3px);
+  }
+
+  /* Sidebar */
+  .sidebar {
+    background: var(--color-card-bg);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    height: fit-content;
+    position: sticky;
+    top: 28px;                       /* keep sticky but slightly lower */
+  }
+
+  .sidebar h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    border-bottom: 2px solid var(--color-primary);
+    display: inline-block;
+    color: var(--color-secondary);
+  }
+
+  .sidebar h3:first-child {
+    margin-top: 0;
+  }
+
+  .sidebar p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidebar li {
+    margin: 0.6rem 0;
+  }
+
+  .sidebar a {
+    text-decoration: none;
+    color: var(--color-secondary);
+    transition: var(--transition);
+    display: inline-block;
+  }
+
+  .sidebar a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+    transform: translateX(5px);
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--color-secondary);
+    color: #fff;
+    margin-top: 2rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .container {
+      max-width: 940px;
+      grid-template-columns: 3.5fr 1fr;
+      gap: 2.5rem;
+    }
+    .post img { height: 280px; }
+    .hero h2 { font-size: 2rem; }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr;    /* stack on mobile */
+      padding: 0 1rem;
+      gap: 1.5rem;
+    }
+
+    .hero {
+      padding: 1.5rem;
+    }
+
+    .hero h2 {
+      font-size: 1.5rem;
+    }
+
+    .post {
+      padding: 1.5rem;
+    }
+
+    .post img {
+      height: 220px;
+    }
+
+    .sidebar {
+      position: static;
+      top: auto;
+    }
+
+    footer {
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Dark Mode */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: #121212;
+      --color-text: #eee;
+      --color-card-bg: #1e1e1e;
+      --color-border: #333;
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <!-- Main Content -->
+  <main class="container">
+
+    <!-- Blog Posts -->
+    <section>
+      <!-- Hero Section -->
+      <div class="hero">
+        <h2>Welcome to My Modern Blog</h2>
+        <p>Explore articles about technology, travel, food, and lifestyle. Stay tuned for exciting content!</p>
+      </div>
+
+      <!-- Featured Post -->
+      <article class="post">
+        <h3>Latest Articles</h3>
+        <p>
+          Discover a collection of insightful articles covering a wide range of topics. 
+          From technology trends to travel tips, lifestyle advice to culinary delights — 
+          there's something for everyone.
+        </p>
+        <a href="Content1.html">Read All Articles →</a>
+      </article>
+
+      <!-- Quick Links -->
+      <article class="post">
+        <h3>Featured Topics</h3>
+        <p>Explore our most popular categories:</p>
+        <ul style="list-style: none; padding: 0; margin: 1rem 0;">
+          <li>🏔️ <a href="Content1.html" >Exploring the Mountains</a></li>
+          <li>🤖 <a href="Content1.html" >The Rise of AI in Everyday Life</a></li>
+          <li>🍳 <a href="Content1.html" >5 Easy Recipes for Busy People</a></li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>About Me</h3>
+      <p>
+        Hi! I'm <strong>Sushant</strong>, a passionate college student and blogger. 
+        I love writing about technology, travel, food, and lifestyle. 
+        Welcome to my creative space!
+      </p>
+
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="Content1.html">My Blog(hamburger)</a></li>
+        <li><a href="Content2.html">My Blog(horizontal)</a></li>
+        <li><a href="Content3.html">My Blog(vertical)</a></li>
+        <li><a href="Content4.html">My Blog(dropdown)</a></li>
+      </ul>
+
+      <h3>Categories</h3>
+      <ul>
+        <li><a href="#">Technology</a></li>
+        <li><a href="#">Travel</a></li>
+        <li><a href="#">Food</a></li>
+        <li><a href="#">Lifestyle</a></li>
+      </ul>
+
+      <h3>Follow Me</h3>
+      <ul>
+        <li><a href="https://www.instagram.com/suushhiiii/">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/in/sushant-r-vaidya-278359335/">LinkedIn</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 My Modern Blog. All Rights Reserved.</p>
+  </footer>
+</body>
+
+</html>

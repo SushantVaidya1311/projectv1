@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="blog.png" type="image/x-icon">
+  <title>5 Easy Recipes for Busy People</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+  :root {
+    --font-main: "Poppins", sans-serif;
+    --font-heading: "Merriweather", serif;
+    --color-bg: #f9fafb;
+    --color-text: #222;
+    --color-primary: #0077ff;
+    --color-secondary: #0057b7;
+    --color-border: #e0e0e0;
+    --color-card-bg: #fff;
+    --radius: 12px;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* Container */
+  .container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  /* Post */
+  .post {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+  }
+
+  .post img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: var(--radius);
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .post h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .post .meta {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1rem;
+  }
+
+  .post p {
+    text-align: justify;
+    margin-bottom: 1.2rem;
+    color: #cdcaca;
+    line-height: 1.8;
+  }
+
+  .post p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  /* Back Button */
+  .back-link {
+    display: inline-block;
+    background: var(--color-primary);
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: var(--transition);
+    margin-top: 1.5rem;
+  }
+
+  .back-link:hover {
+    background: var(--color-secondary);
+    transform: translateX(-5px);
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: var(--color-secondary);
+    color: #fff;
+    margin-top: 3rem;
+    font-size: 0.95rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 1rem;
+    }
+
+    .post {
+      padding: 1.5rem;
+    }
+
+    .post h2 {
+      font-size: 1.5rem;
+    }
+
+    .post img {
+      max-width: 100%;
+    }
+  }
+
+  /* Dark Mode */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: #121212;
+      --color-text: #eee;
+      --color-card-bg: #1e1e1e;
+      --color-border: #333;
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <article class="post">
+      <img src="foodblog.jpeg" alt="5 Easy Recipes for Busy People">
+      
+      <h2>5 Easy Recipes for Busy People</h2>
+      <div class="meta">Posted on September 28, 2025 by Chef Mia</div>
+      
+      <p>
+        Finding time to cook can be tough, but with a few quick recipes, eating well doesn't have to be complicated. 
+        These five easy recipes are perfect for busy people who want something tasty without spending hours in the kitchen. 
+      </p>
+
+      <p>
+        From a one-pan pasta bursting with flavor to a quick veggie stir-fry ready in minutes, each dish keeps things simple and satisfying. 
+        You can try overnight oats for a grab-and-go breakfast, a hearty sandwich for lunch, and a comforting soup to end the day. 
+      </p>
+
+      <p>
+        With just a few ingredients and minimal effort, you'll have delicious meals that fit perfectly into a busy schedule.
+      </p>
+
+      <a href="Content1.html" class="back-link">← Back to Blog</a>
+    </article>
+  </div>
+
+  <footer>
+    <p>© 2025 My Modern Blog. All Rights Reserved.</p>
+  </footer>
+</body>
+
+</html>

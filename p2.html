@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="blog.png" type="image/x-icon">
+  <title>The Rise of AI in Everyday Life</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+  :root {
+    --font-main: "Poppins", sans-serif;
+    --font-heading: "Merriweather", serif;
+    --color-bg: #f9fafb;
+    --color-text: #222;
+    --color-primary: #0077ff;
+    --color-secondary: #0057b7;
+    --color-border: #e0e0e0;
+    --color-card-bg: #fff;
+    --radius: 12px;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* Container */
+  .container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  /* Post */
+  .post {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+  }
+
+  .post img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: var(--radius);
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .post h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .post .meta {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1rem;
+  }
+
+  .post p {
+    text-align: justify;
+    margin-bottom: 1.2rem;
+    color: #cac8c8;
+    line-height: 1.8;
+  }
+
+  .post p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  /* Back Button */
+  .back-link {
+    display: inline-block;
+    background: var(--color-primary);
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: var(--transition);
+    margin-top: 1.5rem;
+  }
+
+  .back-link:hover {
+    background: var(--color-secondary);
+    transform: translateX(-5px);
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: var(--color-secondary);
+    color: #fff;
+    margin-top: 3rem;
+    font-size: 0.95rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 1rem;
+    }
+
+    .post {
+      padding: 1.5rem;
+    }
+
+    .post h2 {
+      font-size: 1.5rem;
+    }
+
+    .post img {
+      max-width: 100%;
+    }
+  }
+
+  /* Dark Mode */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: #121212;
+      --color-text: #eee;
+      --color-card-bg: #1e1e1e;
+      --color-border: #333;
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <article class="post">
+      <img src="techblog.jpeg" alt="The Rise of AI in Everyday Life">
+      
+      <h2>The Rise of AI in Everyday Life</h2>
+      <div class="meta">Posted on October 6, 2025 by Sushant</div>
+      
+      <p>
+        The rise of Artificial Intelligence (AI) has transformed everyday life in ways we barely notice yet constantly rely on. 
+        From voice assistants that manage our daily tasks to personalized recommendations on our favorite apps, 
+        AI has quietly woven itself into the fabric of modern living. 
+      </p>
+
+      <p>
+        It powers navigation systems, healthcare diagnostics, smart home devices, and even the way we shop online. 
+        What once seemed futuristic is now routine — machines learning from our behavior to make life easier, faster, and more efficient. 
+      </p>
+
+      <p>
+        As AI continues to evolve, it's not just changing technology; it's reshaping how we think, work, and connect with the world around us.
+      </p>
+
+      <a href="Content1.html" class="back-link">← Back to Blog</a>
+    </article>
+  </div>
+
+  <footer>
+    <p>© 2025 My Modern Blog. All Rights Reserved.</p>
+  </footer>
+</body>
+
+</html>
