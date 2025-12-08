@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>About — Blogspace</title>
+		<link rel="icon" href="blog.png" type="image/x-icon">
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+		<style>
+				:root{
+						--font-main: 'Poppins', sans-serif;
+						--font-heading: 'Merriweather', serif;
+						--color-bg: #f9fafb;
+						--color-card: #fff;
+						--color-primary: #0077ff;
+						--color-accent: #0057b7;
+						--muted: #f3d1d1;
+						--radius: 12px;
+						--shadow: 0 8px 24px rgba(0,0,0,0.08);
+				}
+				*{box-sizing:border-box;margin:0;padding:0}
+				html,body{height:100%}
+				body{
+						font-family:var(--font-main);
+						min-height:100vh;
+						display:flex;
+						align-items:center;
+						justify-content:center;
+						background: linear-gradient(180deg, rgb(38, 92, 154), var(--color-bg));
+						padding:2rem;
+						color:#222;
+				}
+				.card{
+						width:100%;
+						max-width:920px;
+						background:var(--color-card);
+						border-radius:var(--radius);
+						padding:2rem;
+						box-shadow:var(--shadow);
+				}
+				header{display:flex;align-items:center;gap:1.25rem;margin-bottom:0.75rem}
+				h1{font-family:var(--font-heading);font-size:1.6rem;color:var(--color-accent)}
+				p.lead{color:var(--muted);margin-bottom:1.25rem;font-size:1rem}
+
+				.layout{display:grid;grid-template-columns:1fr 320px;gap:1.25rem;align-items:start}
+				@media (max-width:900px){.layout{grid-template-columns:1fr}}
+
+				.team{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+				@media (max-width:520px){.team{grid-template-columns:1fr}}
+
+				.member{display:flex;gap:1rem;align-items:center}
+				.avatar{width:72px;height:72px;border-radius:10px;background:linear-gradient(135deg,#e6eef9,#f3f9ff);display:flex;align-items:center;justify-content:center;color:var(--color-accent);font-weight:700}
+				.cta{display:inline-block;margin-top:16px;padding:12px 18px;background:var(--color-primary);color:#fff;border-radius:12px;text-decoration:none;font-weight:600}
+
+				.back{margin-top:1rem}
+				.back-link{display:inline-block;background:var(--color-primary);color:#fff;padding:0.75rem 1.1rem;border-radius:10px;text-decoration:none}
+
+				footer{margin-top:1.25rem;color:var(--muted);font-size:0.95rem;text-align:center}
+				@media (prefers-color-scheme:dark){:root{--color-bg:#0b1220;--color-card:#0f1720;color:#e6eef8}}
+		</style>
+</head>
+<body>
+		<div class="card">
+				<header>
+						<h1>About</h1>
+				</header>
+
+				<p class="lead">Stories, guides, and practical advice from our writers on tech, design, and community events.</p>
+
+				<div class="layout">
+						<div>
+								<h2 style="color: #FFFDD0;">Our mission</h2>
+								<p class="lead">We publish clear, helpful content to connect people with events, ideas, and each other. Whether you're a reader looking for inspiration or an organizer wanting to reach a wider audience, our goal is to make knowledge accessible and useful.</p>
+
+								<h3 style="color: #FFFDD0;">Our story</h3>
+								<p class="lead">Started by a small team of event-curators and writers, this blog grew from weekend meetups and a shared passion for thoughtful, practical content. Over time we've expanded our coverage to include tutorials, event spotlights, and interviews with community leaders.</p>
+
+								<h3 style="color: #FFFDD0;">What we cover</h3>
+								<ul style="margin-top:0.6rem;margin-bottom:0.9rem">
+									<li style="color: #FFFDD0;">Event highlights and previews</li>
+									<li style="color: #FFFDD0;">How-to guides for organizers and attendees</li>
+									<li style="color: #FFFDD0;">Interviews with practitioners and community members</li>
+								</ul>
+
+								<a class="cta" href="signup.html">Join our newsletter</a>
+						</div>
+
+						<aside>
+								<h3 style="color: #FFFDD0;">Meet the team</h3>
+								<div class="team">
+										<div class="member">
+												<div class="avatar">SV</div>
+												<div>
+														<strong style="color: #FFFDD0;">Sushant Vaidya</strong>
+														<div style="color:var(--muted)">Founder & Editor — event strategy, content</div>
+												</div>
+										</div>
+
+										<div class="member">
+												<div class="avatar">XY</div>
+												<div>
+														<strong style="color: #FFFDD0;">Username</strong>
+														<div style="color:var(--muted)">Writer — interviews & guides</div>
+												</div>
+										</div>
+
+										<div class="member">
+												<div class="avatar">XY</div>
+												<div>
+														<strong style="color: #FFFDD0;">Username</strong>
+														<div style="color:var(--muted)">Designer — visuals & UX</div>
+												</div>
+										</div>
+								</div>
+
+								<h4 style="color: #FFFDD0;">Contact</h4>
+								<p class="lead">Questions, guest posts, or partnership inquiries — email us at <a href="mailto:sushantvaidya1311@gmail.com">sushantvaidya1311@gmail.com</a>.</p>
+
+								<p class="back"><a class="back-link" href="home(landing page).html">Back to Home</a></p>
+						</aside>
+				</div>
+
+				<footer>
+						<div>© <span id="year"></span> Blogspace — Built with care.</div>
+				</footer>
+		</div>
+
+		<script>
+				document.getElementById('year').textContent = new Date().getFullYear();
+		</script>
+</body>
+</html>
